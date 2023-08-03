@@ -60,8 +60,11 @@ export default function HomePage() {
   const toggleTheme = () =>
     setTheme(theme.name === "dark" ? THEMES.LIGHT : THEMES.DARK);
 
-  const toggleLang = () => setLang(lang.name === "en" ? LANGS.TH : LANGS.EN);
-
+  const toggleLang = () => {
+    if (lang.name === "en") {
+      setLang(LANGS.TH);
+    } else setLang(LANGS.EN);
+  };
   return (
     <div
       style={{
@@ -78,7 +81,11 @@ export default function HomePage() {
           <Controller />
         </LangContext.Provider>
       </ThemeContext.Provider>
-      <Footer year="2023" fullName="Chayanin Suatap" studentId="650610560" />
+      <Footer
+        year="2023"
+        fullName="Tikomporn Luxsanaprokin"
+        studentId="650612085"
+      />
     </div>
   );
 }
